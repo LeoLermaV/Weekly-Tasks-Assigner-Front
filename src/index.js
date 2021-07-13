@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import CreateWeeklyAssignerComponent from './Components/CreateWeeklyAssignerComponent/CreateWeeklyAssignerComponent';
+import App from './App'
 
 
 ReactDOM.render(
   <React.StrictMode>
-   <CreateWeeklyAssignerComponent/>
+   <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
