@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CreateWeeklyAssignerComponent from './Components/CreateWeeklyAssignerComponent/CreateWeeklyAssignerComponent';
 import App from './App'
 
 

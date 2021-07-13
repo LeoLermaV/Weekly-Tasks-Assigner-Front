@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
 import './CreateWeeklyAssignerComponent.css';
+import ListComponent from '../ListComponent/ListComponent';
+
+const handleSubmit = ( e, names, setNames, input, SetInput) => {
+    e.preventDefault()
+   
+    setNames([...names, input])
+    SetInput('')
+}
 
 
-const useInputValue = initialValue => {
-    const [value, setValue] = useState(initialValue);
-  
-    return {
-      value,
-      onChange: e => setValue(e.target.value),
-      resetValue: () => setValue("")
-    };
-  };
-  
-  export default ({ onSubmit }) => {
-    const { resetValue, ...text } = useInputValue("");
-  
+export default () => {
+    const [names, setNames] = useState([])
+    const [ input, setInput ] = useState('')
+
     return (
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          onSubmit(text.value);
-          resetValue();
-        }}
-      >
-        <input {...text} />
-      </form>
-    );
-  };
+        <div>
+            <form  className='FormContainer' onSubmit={(e) => handleSubmit(e, names, setNames, input, setInput)}>
+                <input onChange={(e) => setInput(e.target.value)} value={input} />
+                <button>Submit</button>
+            </form>
+            {names.map(names => (
+                <ListComponent key ={names} Names={names}/>
+            ))}
+        </div>
+    )
+}
