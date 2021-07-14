@@ -1,5 +1,12 @@
-.FormContainer {
+.Form {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+
+.preview {
+    display: flex;
+    justify-content: space-evenly;
+        flex-direction: row;
+    }
